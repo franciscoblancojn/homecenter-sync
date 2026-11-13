@@ -4,6 +4,11 @@ Todos los cambios importantes del plugin Homecenter Sync. Formato basado en [Kee
 
 > ✍️ Antes de publicar, agrega arriba una sección `## [Sin publicar]` con los cambios. `npm run push-v -- patch|minor|major` la renombra a `## [X.Y.Z] - fecha`, y no publica si esa sección no existe.
 
+## [1.0.1] - 2026-11-12
+
+### ✨ Añadido
+- 🚚 Página **Carga Homecenter** en el menú del plugin: sube productos de WooCommerce a Homecenter con filtros, selección, «Cargar en Homecenter», consulta de estado remoto y «Procesar cola ahora». La tabla de productos se comparte con la pestaña **Productos**.
+
 ## [1.0.0] - 2026-11-12
 
 ### ✨ Añadido
@@ -13,7 +18,6 @@ Todos los cambios importantes del plugin Homecenter Sync. Formato basado en [Kee
 - 📝 Metabox **Homecenter** en la edición de producto: habilitar publicación, SellerSku, categoría/marca/GTIN/condición/IVA, atributos, mapeo de variaciones y estado por variación.
 - 🔁 Cola asíncrona con WP-Cron (cada 5 min) respetando el límite de feeds de Seller Center, consulta de **FeedStatus**, registro de feeds y log técnico.
 - 🖼️ Sincronización de imágenes (JPG/PNG, máx. 8) y soporte para productos simples y variables; despublicar envía `Status inactive` y al borrar se encola `ProductRemove`.
-- 🚚 Página **Carga Homecenter** en el menú del plugin: sube productos de WooCommerce a Homecenter con filtros, selección, «Cargar en Homecenter», consulta de estado remoto y «Procesar cola ahora».
 
 ### 🛠️ Corregido
 - 🔄 Al habilitar por primera vez un producto desde su ficha, o al deshabilitar uno ya publicado, se encola el envío (antes solo quedaba guardado).
