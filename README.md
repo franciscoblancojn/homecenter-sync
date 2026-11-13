@@ -2,7 +2,7 @@
 
 > Publica y sincroniza el catalogo de WooCommerce con el marketplace de Homecenter (Seller Center Falabella/Sodimac): credenciales, seleccion de productos, mapeo de SKU y actualizaciones automaticas.
 
-**Versión:** 0.0.0 · **WordPress:** 5.8+ · **PHP:** 7.4+ · **WooCommerce:** requerido · **Licencia:** GPLv2+
+**Versión:** 1.0.0 · **WordPress:** 5.8+ · **PHP:** 7.4+ · **WooCommerce:** requerido · **Licencia:** GPLv2+
 
 📋 [Registro de cambios](CHANGELOG.md) · 🤖 [Reglas para IAs](AGENTS.md) · 📦 [Releases](https://github.com/franciscoblancojn/homecenter-sync/releases)
 

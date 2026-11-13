@@ -3,7 +3,7 @@
 Plugin Name: Homecenter Sync
 Plugin URI: https://github.com/franciscoblancojn/homecenter-sync
 Description: Publica y sincroniza el catalogo de WooCommerce con el marketplace de Homecenter (Seller Center Falabella/Sodimac): credenciales, seleccion de productos, mapeo de SKU y actualizaciones automaticas.
-Version: 0.0.0
+Version: 1.0.0
 Author: franciscoblancojn
 Author URI: https://franciscoblanco.vercel.app/
 License: GPL2+

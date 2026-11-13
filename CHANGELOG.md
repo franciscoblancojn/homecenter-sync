@@ -4,7 +4,7 @@ Todos los cambios importantes del plugin Homecenter Sync. Formato basado en [Kee
 
 > ✍️ Antes de publicar, agrega arriba una sección `## [Sin publicar]` con los cambios. `npm run push-v -- patch|minor|major` la renombra a `## [X.Y.Z] - fecha`, y no publica si esa sección no existe.
 
-## [Sin publicar]
+## [1.0.0] - 2026-11-12
 
 ### ✨ Añadido
 - 🎉 Primera versión: integración WooCommerce ↔ Homecenter (Seller Center Falabella/Sodimac) con URL y credenciales configurables.

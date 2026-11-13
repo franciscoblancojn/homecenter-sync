@@ -1,6 +1,6 @@
 {
   "name": "homecenter-sync",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Publica y sincroniza el catalogo de WooCommerce con el marketplace de Homecenter (Seller Center Falabella/Sodimac): credenciales, seleccion de productos, mapeo de SKU y actualizaciones automaticas.",
   "scripts": {
