@@ -23,7 +23,7 @@
   - `HCS_CATALOG`: caché de marcas/categorías hoja.
 - `src/hooks/`: integración con WordPress / WooCommerce (`add_action` / `add_filter`): cron, metabox de producto, encolado al guardar/borrar.
 - `src/api/`: entradas `admin-post` y AJAX (ajustes, prueba, catálogo, feeds, cola, acciones masivas/remotas de productos).
-- `src/page/`: menú (`add.php`), página con pestañas `FWUPage` (`page.php`) y una sección por pestaña (`sections/<key>.php`: conexión, productos, feeds, registro).
+- `src/page/`: menú (`add.php`), página con pestañas `FWUPage` (`page.php`), página **Carga Homecenter** (`carga.php`), tabla de productos compartida (`partials/products-table.php`) y una sección por pestaña (`sections/<key>.php`: conexión, productos, feeds, registro).
 - Sincronización: v1 soporta **simples y variables + imágenes**. Cada variación se envía con `ParentSku`; despublicar = `ProductUpdate` con `Status inactive`; eliminar cola `ProductRemove`.
 - Plugin genérico: **no** usar nombres ni textos de un sitio concreto.
 - Rendimiento: CSS/JS del admin solo en la página del plugin y en la edición de producto.

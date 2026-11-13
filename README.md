@@ -15,7 +15,7 @@ Conecta el catálogo de **WooCommerce** con el marketplace de **Homecenter** (Se
 1. Configuras las credenciales de Seller Center (`UserID`, `API Key`, `Seller ID`) y la URL de la API.
 2. Descargas el catálogo de marcas y categorías hoja de Homecenter.
 3. Seleccionas qué productos (simples o variables) publicar y completas su mapeo (categoría, marca, atributos, variación, etc.) desde la lista o desde la metabox del producto.
-4. El plugin encola los cambios y los envía como feeds XML firmados (HMAC-SHA256), respetando el límite de envíos de Seller Center. El estado de cada feed y de cada producto se consulta y se registra.
+4. Con **Carga Homecenter** (menú Homecenter → Carga Homecenter) subes la selección de productos de WooCommerce al marketplace: se encola y el cron la envía como feeds XML firmados (HMAC-SHA256), respetando el límite de envíos de Seller Center. El estado de cada feed y de cada producto se consulta y se registra.
 
 > Nota: para probar la conexión real se necesitan credenciales válidas de Seller Center.
 
@@ -23,12 +23,13 @@ Conecta el catálogo de **WooCommerce** con el marketplace de **Homecenter** (Se
 
 En el menú **Homecenter** del admin:
 
-| Pestaña | Ajustes |
+| Pestaña / página | Ajustes |
 |---|---|
-| Conexión | URL de API, credenciales, operador/país, prueba de conexión, actualización de marcas/categorías, valores por defecto (precio/impuesto, categoría, marca, paquete, stock, SKU) y parámetros de sincronización/cola. |
-| Productos | Filtros y listado de productos WooCommerce; acciones masivas para publicar/actualizar, despublicar y consultar estado remoto (selección o todos los resultados del filtro). |
-| Feeds | Historial de feeds enviados, estado (`FeedStatus`), errores y acciones para consultar/procesar. |
-| Registro | Log técnico de operaciones y errores del plugin. |
+| Sincronización → Conexión | URL de API, credenciales, operador/país, prueba de conexión, actualización de marcas/categorías, valores por defecto (precio/impuesto, categoría, marca, paquete, stock, SKU) y parámetros de sincronización/cola. |
+| Sincronización → Productos | Filtros y listado de productos WooCommerce; acciones masivas para publicar/actualizar, despublicar y consultar estado remoto (selección o todos los resultados del filtro). |
+| Sincronización → Feeds | Historial de feeds enviados, estado (`FeedStatus`), errores y acciones para consultar/procesar. |
+| Sincronización → Registro | Log técnico de operaciones y errores del plugin. |
+| Carga Homecenter | Página dedicada a subir productos de WooCommerce a Homecenter: filtros, selección, «Cargar en Homecenter», consulta de estado remoto y «Procesar cola ahora». |
 
 ## 📋 Requisitos
 
@@ -82,7 +83,9 @@ homecenter-sync/
     ├── services/             # Lógica; HCS_LOG_SERVICE
     ├── hooks/                # Integración con WordPress / WooCommerce
     ├── api/                  # Guardado de ajustes (admin-post) y AJAX
-    ├── page/                 # Menú «Homecenter» y secciones (FWUPage)
+    ├── page/                 # Menú «Homecenter», página «Carga Homecenter» y secciones (FWUPage)
+    │   ├── partials/         # Tabla de productos compartida
+    │   └── sections/         # Una sección por pestaña de Sincronización
     ├── js/admin.js           # ES5 + jQuery
     └── css/admin.css
 ```

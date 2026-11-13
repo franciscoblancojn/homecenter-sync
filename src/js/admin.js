@@ -52,6 +52,14 @@ jQuery(function ($) {
                 }
             }, '#hcs-connection-message');
         });
+        $('#hcs-process-carga').on('click', function (e) {
+            e.preventDefault();
+            postSettings('hcs_process', {}, function (res) {
+                if (res && res.success) {
+                    window.setTimeout(function () { window.location.reload(); }, 800);
+                }
+            }, '#hcs-carga-message');
+        });
         $('#hcs-process-feeds, #hcs-poll-feeds').on('click', function (e) {
             e.preventDefault();
             var action = $(this).attr('id') === 'hcs-poll-feeds' ? 'hcs_poll' : 'hcs_process';
@@ -68,20 +76,21 @@ jQuery(function ($) {
 
         $('.hcs-bulk').on('click', function (e) {
             e.preventDefault();
-            var action = $(this).data('action');
+            var $button = $(this);
+            var action = $button.data('action');
             var ids = [];
             $('.hcs-check:checked').each(function () {
                 ids.push($(this).val());
             });
             var scope = $('#hcs-scope-filtered').is(':checked') ? 'filtered' : 'selected';
+            var $msg = $('#' + ($button.data('message') || 'hcs-products-message'));
             if (!ids.length && scope !== 'filtered') {
-                $('#hcs-products-message').addClass('is-error').removeClass('is-ok').text('Selecciona al menos un producto o marca "Aplicar a todos los resultados del filtro".');
+                $msg.addClass('is-error').removeClass('is-ok').text('Selecciona al menos un producto o marca "Aplicar a todos los resultados del filtro".');
                 return;
             }
             if (action === 'deactivate' && !window.confirm(HCS_ADMIN.confirm_deactivate || '¿Despublicar en Homecenter?')) {
                 return;
             }
-            var $msg = $('#hcs-products-message');
             $msg.removeClass('is-error is-ok').text(HCS_ADMIN.processing || 'Procesando…');
 
             var params = window.location.search ? window.location.search.substring(1) : '';

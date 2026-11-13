@@ -10,6 +10,23 @@ add_action('admin_menu', function () {
         'dashicons-store',
         57
     );
+    // Sustituye el primer submenú automático del menú padre.
+    add_submenu_page(
+        HCS_KEY,
+        'Homecenter Sync',
+        'Sincronización',
+        HCS_CAPABILITY,
+        HCS_KEY,
+        'HCS_PAGE_VIEW'
+    );
+    add_submenu_page(
+        HCS_KEY,
+        'Carga Homecenter',
+        'Carga Homecenter',
+        HCS_CAPABILITY,
+        HCS_KEY . '-carga',
+        'HCS_PAGE_CARGA_VIEW'
+    );
 });
 
 function HCS_PAGE_VIEW()
@@ -17,9 +34,15 @@ function HCS_PAGE_VIEW()
     require_once HCS_DIR . 'src/page/page.php';
 }
 
-// CSS y JS del admin solo en la página del plugin.
+function HCS_PAGE_CARGA_VIEW()
+{
+    require_once HCS_DIR . 'src/page/carga.php';
+}
+
+// CSS y JS del admin solo en las páginas del plugin.
 add_action('admin_enqueue_scripts', function ($hook) {
-    if ('toplevel_page_' . HCS_KEY !== $hook) {
+    $page = isset($_GET['page']) ? sanitize_text_field(wp_unslash($_GET['page'])) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    if (!in_array($page, [HCS_KEY, HCS_KEY . '-carga'], true)) {
         return;
     }
     $css = HCS_DIR . 'src/css/admin.css';
@@ -35,4 +58,3 @@ add_action('admin_enqueue_scripts', function ($hook) {
         'confirm_deactivate' => '¿Despublicar de Homecenter los productos seleccionados? Quedarán inactivos en el marketplace.',
     ]);
 });
-
