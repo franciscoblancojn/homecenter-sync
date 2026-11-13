@@ -1,0 +1,11 @@
+{
+    "require": {
+        "franciscoblancojn/wordpress_utils": "^1"
+    },
+    "config": {
+        "autoloader-suffix": "HCS",
+        "platform": {
+            "php": "7.4.33"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "homecenter-sync",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Publica y sincroniza el catalogo de WooCommerce con el marketplace de Homecenter (Seller Center Falabella/Sodimac): credenciales, seleccion de productos, mapeo de SKU y actualizaciones automaticas.",
+  "scripts": {
+    "v": "grep -m1 '^Version:' index.php | sed 's/.*Version:[[:space:]]*//' | tr -d '\\r'",
+    "sync:package": "VERSION=$(npm run -s v) && npm version $VERSION --no-git-tag-version --allow-same-version",
+    "sync:readme": "VERSION=$(npm run -s v) && sed -i \"s/^\\*\\*Versión:\\*\\* [0-9.]\\+/**Versión:** $VERSION/\" README.md",
+    "sync:version": "npm run sync:package && npm run sync:readme",
+    "check": "bash bin/harness.sh",
+    "push-v": "bash scripts/bump-version.sh",
+    "push-tag": "npm run sync:version && VERSION=$(npm run -s v) && git add . && git commit -m \"Release $VERSION\" && git tag $VERSION && git push origin master && git push origin $VERSION",
+    "rm-gitignore": "find vendor -type f -name \".gitignore\" -delete || true",
+    "rm-composer-json": "find vendor -type f -name \"composer.json\" -delete || true",
+    "rm-package-json": "find vendor -type f -name \"package.json\" -delete || true",
+    "rm-README": "find vendor -type f -name \"README.md\" -delete || true",
+    "rm-composer-lock": "rm composer.lock || true",
+    "rm-post": "npm run rm-composer-lock && npm run rm-gitignore && npm run rm-composer-json && npm run rm-package-json && npm run rm-README",
+    "rm-vendor": "npm run rm-composer-lock && rm -r ./libs || true",
+    "mv-post": "mv vendor libs",
+    "update": "npm run rm-vendor && npm run install",
+    "install": "composer install --no-dev --optimize-autoloader && npm run rm-post && npm run mv-post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscoblancojn/homecenter-sync.git"
+  },
+  "author": "franciscoblancojn",
+  "license": "GPL-2.0-or-later"
+}

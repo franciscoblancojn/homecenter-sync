@@ -1,0 +1,114 @@
+/* Homecenter Sync — admin. Prefijo hcs- (las clases fwue- son de wordpress_utils). */
+.hcs-page .hcs-version {
+	font-size: 13px;
+	font-weight: 400;
+	color: #646970;
+}
+.hcs-page .tab-content {
+	display: none;
+}
+.hcs-page .tab-content.nav-tab-active {
+	display: block;
+}
+.hcs-page .fwue-message,
+.hcs-page .hcs-inline-message {
+	max-width: 900px;
+}
+.hcs-muted {
+	color: #646970;
+	font-size: 12px;
+}
+.hcs-error {
+	color: #b32d2e;
+}
+.hcs-inline-message {
+	margin: 8px 0;
+	min-height: 20px;
+}
+.hcs-inline-message.is-ok {
+	color: #007017;
+}
+.hcs-inline-message.is-error {
+	color: #b32d2e;
+}
+.hcs-filters {
+	margin: 12px 0;
+}
+.hcs-filters input[type="search"],
+.hcs-filters select {
+	margin-right: 6px;
+	margin-bottom: 6px;
+	vertical-align: middle;
+}
+.hcs-bulk-actions {
+	margin: 12px 0;
+}
+.hcs-bulk-actions .button {
+	margin-right: 4px;
+}
+.hcs-inline {
+	margin-left: 10px;
+}
+.hcs-products-table .hcs-thumb {
+	width: 32px;
+	height: 32px;
+	object-fit: cover;
+	vertical-align: middle;
+	margin-right: 6px;
+	border-radius: 2px;
+	background: #f0f0f1;
+}
+.hcs-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 10px;
+	font-size: 11px;
+	line-height: 1.6;
+	background: #f0f0f1;
+	color: #50575e;
+}
+.hcs-badge--published { background: #dff2e1; color: #007017; }
+.hcs-badge--inactive { background: #f0f0f1; color: #50575e; }
+.hcs-badge--queued,
+.hcs-badge--feed_pending,
+.hcs-badge--Queued,
+.hcs-badge--Processing { background: #fcf0d6; color: #8a6116; }
+.hcs-badge--error,
+.hcs-badge--Error,
+.hcs-badge--Canceled { background: #f8d7da; color: #b32d2e; }
+.hcs-badge--partial { background: #e6f0fa; color: #135e96; }
+.hcs-badge--Finished { background: #dff2e1; color: #007017; }
+.hcs-pre {
+	margin: 0;
+	max-width: 520px;
+	max-height: 140px;
+	overflow: auto;
+	white-space: pre-wrap;
+	word-break: break-word;
+	font-size: 11px;
+}
+.hcs-metabox .hcs-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px;
+}
+.hcs-metabox .hcs-actions .button {
+	margin-right: 4px;
+	margin-bottom: 4px;
+}
+.hcs-metabox .hcs-message {
+	min-height: 18px;
+	margin-top: 4px;
+}
+.hcs-metabox .hcs-message.is-ok { color: #007017; }
+.hcs-metabox .hcs-message.is-error { color: #b32d2e; }
+.hcs-variations {
+	margin-top: 6px;
+	font-size: 12px;
+}
+.hcs-variations th, .hcs-variations td {
+	padding: 4px 6px;
+}
+.hcs-feeds-table code {
+	font-size: 11px;
+}
